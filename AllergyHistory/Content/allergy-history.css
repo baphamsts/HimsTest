@@ -1,0 +1,69 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.prefix-box-icon {
+    background: #ddd;
+    position: relative;
+    top: 3px;
+    right: -4px;
+}
+
+.input-with-icon {
+    border: none;
+    flex: 1;
+}
+
+.prefix-box-icon, .input-with-icon {
+    padding: 8px;
+}
+
+.filter-section {
+    min-height: 60px;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.hide_column {
+    display: none;
+}
+
+td.text-wrap {
+    white-space: normal;
+}
+
+.width-150 {
+    width: 150px;
+}
+
+.filter-box {
+    margin: 10px 0px;
+    float: left;
+    padding: 0;
+}
+
+.allergy-table-button {
+    float: right;
+    margin-bottom: 6px;
+}
+
+.allergy-searchbox {
+    float: left;
+    position: relative;
+    left: -6px;
+    padding: 0;
+}
+
+    .allergy-searchbox label {
+        display: grid;
+    }
+
+    .allergy-searchbox input {
+        width: 256px !important;
+        height: 38px;
+        margin-bottom: 6px;
+    }
+
+@media screen and (max-width: 767px) {
+    .allergy-table-button {
+        float: left;
+    }
+}

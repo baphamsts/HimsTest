@@ -1,0 +1,103 @@
+﻿@using AllergyHistory.Models
+@model AllergyPageViewModel
+<div class="col-12">
+    <button class="collapsible">Allergy History</button>
+    <div class="content col-12">
+        <div class="col-12 filter-section">
+            <div class="col-md-3 offset-md-0 col-sm-12 filter-box">
+                <span class="prefix-box-icon"><i class="fa fa-filter" aria-hidden="true"></i></span>
+                <select class="selectpicker show-tick">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-3 offset-md-4 col-sm-12 filter-box">
+                <span class="prefix-box-icon"><i class="fas fa-clock" aria-hidden="true"></i></span>
+                <select class="selectpicker show-tick">
+                    <option value="all">All</option>
+                    <option value="lastyear">1 Year</option>
+                    <option value="lastsixmonth">6 Month</option>
+                    <option value="last">Most Recent</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="width:100%; margin:0 auto;">
+            <table id="example" class="table table-striped table-bordered dt-responsive" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>AllergenId</th>
+                        <th>AllergenType</th>
+                        <th>ReactionId</th>
+                        <th>SeverityId</th>
+                        <th>Patient</th>
+                        <th>Type</th>
+                        <th>Allergen</th>
+                        <th>Reaction</th>
+                        <th>Severity</th>
+                        <th>Notes</th>
+                        <th>Create Info</th>
+                        <th>Update Info</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <button class="collapsible">Allergy Input</button>
+    <div class="content overflow-hidden col-12">
+        <div class="row allergy-input">
+            <div class="col-md-3 col-sm-12">
+                <div class="form-group">
+                    <div><label for="allergenTypeSelectBox">Allergen Type</label> </div>
+                    <select id="allergenTypeSelectBox" asp-items="Model.AllergenTypeSelectList" class="selectpicker show-tick"></select>
+                </div>
+            </div>
+
+            <div class="col-md-3 offset-md-1 col-sm-12">
+                <div class="form-group">
+                    <div><label for="allergenSeveritySelectBox">Severity</label></div>
+                    <select id="allergenSeveritySelectBox" asp-items="Model.AllergenSeveritySelectList" class="selectpicker show-tick"></select>
+                </div>
+            </div>
+
+            <div class="col-md-3 offset-md-1 col-sm-12">
+                <div class="form-group">
+                    <div><label for="allergenReactionSelectBox">Reaction</label></div>
+                    <select id="allergenReactionSelectBox" asp-items="Model.AllergenReactionSelectList" class="selectpicker show-tick"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-3 col-sm-12">
+                <div class="form-group">
+                    <div><label for="allergenSelectBox">Allergen</label></div>
+                    <select id="allergenSelectBox" asp-items="Model.AllergenSelectList" class="selectpicker show-tick"></select>
+                </div>
+            </div>
+            <div id="medicationOption" class="col-md-3 offset-md-1 col-sm-12">
+                <div class="form-group">
+                    <div><label for="medicationSelectBox">Medication</label></div>
+                    <select id="medicationSelectBox" asp-items="Model.MedicationSelectList" class="selectpicker show-tick"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-12">
+                <div><label for="noteText">Notes</label></div>
+                <textarea rows="4" class="form-control" id="noteText" placeholder="The allergen notes"></textarea>
+            </div>
+        </div>
+
+        <div id="form-buttons" class="form-buttons">
+            <button id="submitButton" type="button" class="btn btn-success">SUBMIT</button>
+            <button id="resetButton" type="button" class="btn btn-warning">RESET</button>
+        </div>
+    </div>
+</div>

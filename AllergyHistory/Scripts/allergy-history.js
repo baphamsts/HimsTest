@@ -22,19 +22,19 @@ $(document).ready(function () {
         },
     
         "columns": [
-            { "data": "id", "name": "id", "autoWidth": true, "className": "hide_column" },
-            { "data": "allergenId", "name": "allergenId", "autoWidth": true, "className": "hide_column" },
-            { "data": "allergenType", "name": "allergenType", "autoWidth": true, "className": "hide_column" },
-            { "data": "reactionId", "name": "reactionId", "autoWidth": true, "className": "hide_column" },
-            { "data": "severityId", "name": "severityId", "autoWidth": true, "className": "hide_column" },
-            { "data": "patient", "name": "patient", "autoWidth": true },
-            { "data": "type", "name": "type", "autoWidth": true },
-            { "data": "allergen", "name": "allergen", "autoWidth": true },
-            { "data": "reaction", "name": "reaction", "autoWidth": true },
-            { "data": "serverty", "name": "serverty", "autoWidth": true },
-            { "data": "notes", "name": "notes", "autoWidth": true },
-            { "data": "createInfo", "name": "createInfo", "autoWidth": true },
-            { "data": "updateInfo", "name": "updateInfo", "autoWidth": true },
+            { "data": "Id", "name": "Id", "autoWidth": true, "className": "hide_column" },
+            { "data": "AllergenId", "name": "AllergenId", "autoWidth": true, "className": "hide_column" },
+            { "data": "AllergenType", "name": "AllergenType", "autoWidth": true, "className": "hide_column" },
+            { "data": "ReactionId", "name": "ReactionId", "autoWidth": true, "className": "hide_column" },
+            { "data": "SeverityId", "name": "SeverityId", "autoWidth": true, "className": "hide_column" },
+            { "data": "Patient", "name": "Patient", "autoWidth": true },
+            { "data": "Type", "name": "Type", "autoWidth": true },
+            { "data": "Allergen", "name": "Allergen", "autoWidth": true },
+            { "data": "Reaction", "name": "Reaction", "autoWidth": true },
+            { "data": "Serverty", "name": "Serverty", "autoWidth": true },
+            { "data": "Notes", "name": "Notes", "autoWidth": true },
+            { "data": "CreateInfo", "name": "CreateInfo", "autoWidth": true },
+            { "data": "UpdateInfo", "name": "UpdateInfo", "autoWidth": true },
             {
                 data: null, render: function (data, type, row) {
                     return "<a href='#' class='btn btn-inf' onclick=EditDataInput("

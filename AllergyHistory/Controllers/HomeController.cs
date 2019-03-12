@@ -177,7 +177,7 @@ namespace AllergyHistory.Controllers
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int recordsTotal = 0;
 
-                var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/AllergyHistory");
+                var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/allergen-histories");
 
                 var allergyHistoryData = allergyHistoryList.AllergenHistories.Select(x => new AllergenHistoryDataTableViewModel
                 {
@@ -196,10 +196,10 @@ namespace AllergyHistory.Controllers
                     UpdateInfo = $"{x.UpdateDate} by {x.UpdateUser}"
                 });
 
-                if (!string.IsNullOrEmpty(searchPatientValue))
-                {
-                    allergyHistoryData = allergyHistoryData.Where(m => m.Patient.Contains(searchPatientValue));
-                }
+                //if (!string.IsNullOrEmpty(searchPatientValue))
+                //{
+                //    allergyHistoryData = allergyHistoryData.Where(m => m.Patient.Contains(searchPatientValue));
+                //}
 
                 recordsTotal = allergyHistoryData.Count();
 

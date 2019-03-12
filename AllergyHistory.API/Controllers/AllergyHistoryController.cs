@@ -14,6 +14,8 @@ namespace AlleryHistory.API.Controllers
             this.allergyHistoryDataService = allergyHistoryDataService;
         }
 
+        [Route("api/allergen-histories")]
+        [HttpGet]
         public HttpResponseMessage Get()
         {
             var data = allergyHistoryDataService.GetAllAllergenHistoryXml();

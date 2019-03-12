@@ -22,9 +22,16 @@ namespace AllergyHistory
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/demoscripts").Include(
+                     "~/Scripts/allergy-history.js",
+                     "~/Scripts/allergy-input.js",
+                     "~/Scripts/site.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/allergy-input.css",
+                      "~/Content/allergy-history.css"));
         }
     }
 }

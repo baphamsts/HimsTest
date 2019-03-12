@@ -54,21 +54,24 @@
             <div class="col-md-3 col-sm-12">
                 <div class="form-group">
                     <div><label for="allergenTypeSelectBox">Allergen Type</label> </div>
-                    <select id="allergenTypeSelectBox" asp-items="Model.AllergenTypeSelectList" class="selectpicker show-tick"></select>
+                    @Html.DropDownList("allergenTypeSelectBox", Model.AllergenTypeSelectList, new { @class = "selectpicker show-tick" })
+                    @*<select id="allergenTypeSelectBox" asp-items="Model.AllergenTypeSelectList" class="selectpicker show-tick"></select>*@
                 </div>
             </div>
 
             <div class="col-md-3 offset-md-1 col-sm-12">
                 <div class="form-group">
                     <div><label for="allergenSeveritySelectBox">Severity</label></div>
-                    <select id="allergenSeveritySelectBox" asp-items="Model.AllergenSeveritySelectList" class="selectpicker show-tick"></select>
+                    @Html.DropDownList("allergenSeveritySelectBox", Model.AllergenSeveritySelectList, new { @class = "selectpicker show-tick" })
+                    @*<select id="allergenSeveritySelectBox" asp-items="Model.AllergenSeveritySelectList" class="selectpicker show-tick"></select>*@
                 </div>
             </div>
 
             <div class="col-md-3 offset-md-1 col-sm-12">
                 <div class="form-group">
                     <div><label for="allergenReactionSelectBox">Reaction</label></div>
-                    <select id="allergenReactionSelectBox" asp-items="Model.AllergenReactionSelectList" class="selectpicker show-tick"></select>
+                    @Html.DropDownList("allergenReactionSelectBox", Model.AllergenReactionSelectList, new { @class = "selectpicker show-tick" })
+                    @*<select id="allergenReactionSelectBox" asp-items="Model.AllergenReactionSelectList" class="selectpicker show-tick"></select>*@
                 </div>
             </div>
         </div>
@@ -77,13 +80,15 @@
             <div class="col-md-3 col-sm-12">
                 <div class="form-group">
                     <div><label for="allergenSelectBox">Allergen</label></div>
-                    <select id="allergenSelectBox" asp-items="Model.AllergenSelectList" class="selectpicker show-tick"></select>
+                    @Html.DropDownList("allergenSelectBox", Model.AllergenSelectList, new { @class = "selectpicker show-tick" })
+                    @*<select id="allergenSelectBox" asp-items="Model.AllergenSelectList" class="selectpicker show-tick"></select>*@
                 </div>
             </div>
             <div id="medicationOption" class="col-md-3 offset-md-1 col-sm-12">
                 <div class="form-group">
                     <div><label for="medicationSelectBox">Medication</label></div>
-                    <select id="medicationSelectBox" asp-items="Model.MedicationSelectList" class="selectpicker show-tick"></select>
+                    @Html.DropDownList("medicationSelectBox", Model.MedicationSelectList, new { @class = "selectpicker show-tick" })
+                    @*<select id="medicationSelectBox" asp-items="Model.MedicationSelectList" class="selectpicker show-tick"></select>*@
                 </div>
             </div>
         </div>

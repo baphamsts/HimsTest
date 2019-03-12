@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory", "AllergyHistory\AllergyHistory.csproj", "{38118023-479B-4A6F-9553-E3DC4F5AC3EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.API", "AllergyHistory.API\AllergyHistory.API.csproj", "{DE07E22C-27EA-4B65-B983-0503D38D0BCC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.DAL", "AllergyHistory.DAL\AllergyHistory.DAL.csproj", "{106BCF2F-38EC-4564-8475-F2ED20A66851}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.Service", "AllergyHistory.Service\AllergyHistory.Service.csproj", "{17553450-EABB-4894-841F-D4C8274E2EE9}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.Domain", "AllergyHistory.Domain\AllergyHistory.Domain.csproj", "{8D7AD7B7-C08D-4E09-A9B9-F72999641FD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.Contract", "AllergyHistory.Contract\AllergyHistory.Contract.csproj", "{29EEC1B5-A47F-4083-850B-A09D74375D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllergyHistory.API", "AllergyHistory.API\AllergyHistory.API.csproj", "{3C855B07-1F5E-45FF-B34A-CDE5148CA896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{38118023-479B-4A6F-9553-E3DC4F5AC3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38118023-479B-4A6F-9553-E3DC4F5AC3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38118023-479B-4A6F-9553-E3DC4F5AC3EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE07E22C-27EA-4B65-B983-0503D38D0BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE07E22C-27EA-4B65-B983-0503D38D0BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE07E22C-27EA-4B65-B983-0503D38D0BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE07E22C-27EA-4B65-B983-0503D38D0BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{106BCF2F-38EC-4564-8475-F2ED20A66851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{106BCF2F-38EC-4564-8475-F2ED20A66851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106BCF2F-38EC-4564-8475-F2ED20A66851}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{29EEC1B5-A47F-4083-850B-A09D74375D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29EEC1B5-A47F-4083-850B-A09D74375D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29EEC1B5-A47F-4083-850B-A09D74375D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C855B07-1F5E-45FF-B34A-CDE5148CA896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C855B07-1F5E-45FF-B34A-CDE5148CA896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C855B07-1F5E-45FF-B34A-CDE5148CA896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C855B07-1F5E-45FF-B34A-CDE5148CA896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

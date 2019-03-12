@@ -1,0 +1,32 @@
+<row CodeId="610" CodeDesc="Aminoglycoside Antibiotics" CodeText="Aminoglycoside Antibiotics" TypeId="62" />
+<row CodeId="581" CodeDesc="Anesthesia" CodeText="Anesthesia" TypeId="62" />
+<row CodeId="582" CodeDesc="Animals(dander, skin saliva)" CodeText="Animals(dander, skin saliva)" TypeId="62" />
+<row CodeId="583" CodeDesc="Anti-seizure medication" CodeText="Anti-seizure medication" TypeId="62" />
+<row CodeId="584" CodeDesc="Aspirin" CodeText="Aspirin" TypeId="62" />
+<row CodeId="585" CodeDesc="Cephalosporins" CodeText="Cephalosporins" TypeId="62" />
+<row CodeId="586" CodeDesc="Dust" CodeText="Dust" TypeId="62" />
+<row CodeId="587" CodeDesc="Dye" CodeText="Dye" TypeId="62" />
+<row CodeId="588" CodeDesc="Eggs" CodeText="Eggs" TypeId="62" />
+<row CodeId="589" CodeDesc="Epinephrine" CodeText="Epinephrine" TypeId="62" />
+<row CodeId="590" CodeDesc="Fish" CodeText="Fish" TypeId="62" />
+<row CodeId="580" CodeDesc="Grass" CodeText="Grass" TypeId="62" />
+<row CodeId="591" CodeDesc="Ibuprofen" CodeText="Ibuprofen" TypeId="62" />
+<row CodeId="592" CodeDesc="Insect bite/sting/particles" CodeText="Insect bite/sting/particles" TypeId="62" />
+<row CodeId="593" CodeDesc="Lidocaine" CodeText="Lidocaine" TypeId="62" />
+<row CodeId="594" CodeDesc="Milk" CodeText="Milk" TypeId="62" />
+<row CodeId="595" CodeDesc="Mold" CodeText="Mold" TypeId="62" />
+<row CodeId="596" CodeDesc="Naproxen" CodeText="Naproxen" TypeId="62" />
+<row CodeId="640" CodeDesc="No Known Drug Allergies" CodeText="NKDA" TypeId="62" />
+<row CodeId="597" CodeDesc="Novocaine" CodeText="Novocaine" TypeId="62" />
+<row CodeId="598" CodeDesc="Nuts" CodeText="Nuts" TypeId="62" />
+<row CodeId="599" CodeDesc="Peanuts" CodeText="Peanuts" TypeId="62" />
+<row CodeId="600" CodeDesc="Penicillin" CodeText="Penicillin" TypeId="62" />
+<row CodeId="601" CodeDesc="Perfume" CodeText="Perfume" TypeId="62" />
+<row CodeId="602" CodeDesc="Plants" CodeText="Plants" TypeId="62" />
+<row CodeId="603" CodeDesc="Pollen" CodeText="Pollen" TypeId="62" />
+<row CodeId="604" CodeDesc="Shellfish" CodeText="Shellfish" TypeId="62" />
+<row CodeId="605" CodeDesc="Smoke" CodeText="Smoke" TypeId="62" />
+<row CodeId="606" CodeDesc="Soy" CodeText="Soy" TypeId="62" />
+<row CodeId="607" CodeDesc="Sulfonamides" CodeText="Sulfonamides" TypeId="62" />
+<row CodeId="608" CodeDesc="Trees" CodeText="Trees" TypeId="62" />
+<row CodeId="609" CodeDesc="Wheat" CodeText="Wheat" TypeId="62" />

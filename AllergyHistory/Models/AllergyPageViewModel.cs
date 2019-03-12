@@ -4,7 +4,11 @@ using System.Web.Mvc;
 namespace AllergyHistory.Models
 {
     public class AllergyPageViewModel
-    { 
+    {
+        public AllergyPageViewModel()
+        {
+
+        }
         public List<SelectListItem> AllergenSelectList { get; set; }
         public List<SelectListItem> AllergenTypeSelectList { get; set; }
         public List<SelectListItem> AllergenReactionSelectList { get; set; }

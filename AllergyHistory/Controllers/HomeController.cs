@@ -167,14 +167,17 @@ namespace AllergyHistory.Controllers
         {
             try
             {
-                var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
-                var start = Request.Form["start"].FirstOrDefault();
-                var pageLength = Request.Form["length"].FirstOrDefault();
-                var searchPatientValue = Request.Form["search[value]"].FirstOrDefault().ToString();
+                //var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+                //var start = Request.Form["start"].FirstOrDefault();
+                //var pageLength = Request.Form["length"].FirstOrDefault();
+                //var searchPatientValue = Request.Form["search[value]"].FirstOrDefault().ToString();
 
                 //Paging Size (10,20,50,100, all = -1)  
-                int pageSize = pageLength != null ? Convert.ToInt32(pageLength) : 0;
-                int skip = start != null ? Convert.ToInt32(start) : 0;
+                //int pageSize = pageLength != null ? Convert.ToInt32(pageLength) : 0;
+                //int skip = start != null ? Convert.ToInt32(start) : 0;
+                var draw = 1;
+                var pageSize = 10;
+                var skip = 0;
                 int recordsTotal = 0;
 
                 var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/allergen-histories");
@@ -204,7 +207,12 @@ namespace AllergyHistory.Controllers
                 recordsTotal = allergyHistoryData.Count();
 
                 var data = pageSize == -1 ? allergyHistoryData : allergyHistoryData.Skip(skip).Take(pageSize);
-                return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+
+                return Json(new {
+                    draw = draw,
+                    recordsFiltered = recordsTotal,
+                    recordsTotal = recordsTotal,
+                    data = data });
             }
             catch (Exception ex)
             {

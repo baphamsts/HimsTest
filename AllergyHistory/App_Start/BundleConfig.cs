@@ -19,8 +19,18 @@ namespace AllergyHistory
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/popper").Include(
+                        "~/Scripts/popper.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap/bootstrap.min.js",
+                      "~/Scripts/bootstrap/bootstrap-select.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/fontawesome").Include(
+                      "~/Scripts/fontawesome/all.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
+                      "~/Libs/DataTables/datatables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/demoscripts").Include(
                      "~/Scripts/allergy-history.js",
@@ -28,10 +38,13 @@ namespace AllergyHistory
                      "~/Scripts/site.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap/bootstrap.css",
+                      "~/Content/bootstrap/bootstrap-select.css",
+                      "~/Content/fontawesome/all.css",
                       "~/Content/site.css",
                       "~/Content/allergy-input.css",
-                      "~/Content/allergy-history.css"));
+                      "~/Content/allergy-history.css",
+                      "~/Libs/DataTables/datatables.css"));
         }
     }
 }

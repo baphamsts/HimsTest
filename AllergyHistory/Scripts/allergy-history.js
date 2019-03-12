@@ -101,9 +101,6 @@ $(document).ready(function () {
         ]
     });
 
-    //dataTable.columns([0, 1, 2, 3, 4]).visible(false, false);
-    //dataTable.columns.adjust().draw(false);
-
     $('.selectpicker').selectpicker();
 });
 

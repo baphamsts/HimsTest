@@ -24,6 +24,7 @@ namespace AllergyHistory
             container.RegisterType<IRepository<AllergenHistory>, AllegenHistoryRepository>();
             container.RegisterType<IAllergyHistoryConverter, AllergyHistoryConverter>();
             container.RegisterType<IAllergyHistoryDataService, AllergyHistoryDataService>();
+            container.RegisterType<IRevokeApiService, RevokeApiService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

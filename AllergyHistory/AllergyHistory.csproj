@@ -164,6 +164,8 @@
     <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Models\AllergyPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RevokeApiService.cs" />
+    <Compile Include="Services\IRevokeApiService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\allergy-history.css" />

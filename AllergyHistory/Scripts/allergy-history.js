@@ -5,6 +5,7 @@
 $(document).ready(function () {
     var dataTable = $("#allergenHistoryDataTable").DataTable({
         "processing": true, // for show progress bar
+        "responsive": true,
         "serverSide": true, // for process server side
         "fnServerParams": function (aoData) {
             aoData.statesearch = $('#stateFilterSelectBox').val();

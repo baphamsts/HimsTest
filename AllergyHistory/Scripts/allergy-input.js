@@ -31,7 +31,7 @@ $("#submitButton").click(function (e) {
 
     $.ajax({
         type: "POST",
-        url: "/imball-reagens/public/shareitem",
+        url: "/home/updateAllergen",
         data: dataObj,
 
         success: function (result) {

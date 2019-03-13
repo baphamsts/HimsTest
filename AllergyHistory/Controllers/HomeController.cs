@@ -224,5 +224,17 @@ namespace AllergyHistory.Controllers
 
         }
         
+
+        public ActionResult UpdateAllergen()
+        {
+            try
+            {
+                return Json( new { success = true });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

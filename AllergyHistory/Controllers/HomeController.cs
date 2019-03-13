@@ -167,17 +167,15 @@ namespace AllergyHistory.Controllers
         {
             try
             {
-                //var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
-                //var start = Request.Form["start"].FirstOrDefault();
-                //var pageLength = Request.Form["length"].FirstOrDefault();
-                //var searchPatientValue = Request.Form["search[value]"].FirstOrDefault().ToString();
+                var draw = HttpContext.Request.Form["draw"];
+                var start = Request.Form["start"];
+                var pageLength = Request.Form["length"];
+                var searchPatientValue = Request.Form["search[value]"];
 
-                //Paging Size (10,20,50,100, all = -1)  
-                //int pageSize = pageLength != null ? Convert.ToInt32(pageLength) : 0;
-                //int skip = start != null ? Convert.ToInt32(start) : 0;
-                var draw = 1;
-                var pageSize = 10;
-                var skip = 0;
+                //Paging Size(10,20,50,100, all = -1)  
+                int pageSize = pageLength != string.Empty ? Convert.ToInt32(pageLength) : 0;
+                int skip = start != string.Empty ? Convert.ToInt32(start) : 0;
+                
                 int recordsTotal = 0;
 
                 var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/allergen-histories");
@@ -199,10 +197,10 @@ namespace AllergyHistory.Controllers
                     UpdateInfo = $"{x.UpdateDate} by {x.UpdateUser}"
                 });
 
-                //if (!string.IsNullOrEmpty(searchPatientValue))
-                //{
-                //    allergyHistoryData = allergyHistoryData.Where(m => m.Patient.Contains(searchPatientValue));
-                //}
+                if (!string.IsNullOrEmpty(searchPatientValue))
+                {
+                    allergyHistoryData = allergyHistoryData.Where(m => m.Patient.Contains(searchPatientValue));
+                }
 
                 recordsTotal = allergyHistoryData.Count();
 

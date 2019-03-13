@@ -69,13 +69,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\History\HistoryData.xml" />
-    <Content Include="Data\Input\AllergenDropdown.xml" />
-    <Content Include="Data\Input\AllergenReactionDropdown.xml" />
-    <Content Include="Data\Input\AllergenSeverityDropdown.xml" />
-    <Content Include="Data\Input\AllergenTypeDropdown.xml" />
-    <Content Include="Data\Input\MedicationDropdown.xml" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

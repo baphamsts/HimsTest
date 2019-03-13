@@ -1,6 +1,0 @@
-<row CodeId="633" CodeDesc="Life Threatening" CodeValue="4" TypeId="65" />
-<row CodeId="630" CodeDesc="Low" CodeValue="1" TypeId="65" />
-<row CodeId="631" CodeDesc="Moderate" CodeValue="2" TypeId="65" />
-<row CodeId="635" CodeDesc="N/A" CodeValue="6" TypeId="65" />
-<row CodeId="632" CodeDesc="Severe" CodeValue="3" TypeId="65" />
-<row CodeId="634" CodeDesc="Unknown" CodeValue="5" TypeId="65" />

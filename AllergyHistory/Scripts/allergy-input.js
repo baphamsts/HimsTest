@@ -5,11 +5,23 @@ $('#allergenTypeSelectBox').change(function (e) {
     console.log($('#allergenTypeSelectBox').val());
     var typeId = $('#allergenTypeSelectBox').val();
 
+    //Allergen
+    if (typeId == "611") {
+        $('#allergenOption').show();
+        $('#medicationOption').hide();
+    }
+    else {
+        $('#allergenOption').hide();
+        $('#medicationOption').show();
+    }
+
     //Medication
     if (typeId == "612") {
         $('#medicationOption').show();
+        $('#allergenOption').hide();
     }
     else {
+        $('#allergenOption').show();
         $('#medicationOption').hide();
     }
 

@@ -2,7 +2,7 @@
 @model AllergyPageViewModel
 <div>
     <button class="collapsible">Allergy History</button>
-    <div class="content col-12">
+    <div id="historySection" class="content col-12">
         <div class="col-12 filter-section">
             <div class="col-md-3 offset-md-0 col-sm-12 filter-box">
                 <span class="prefix-box-icon"><i class="fa fa-filter" aria-hidden="true"></i></span>
@@ -25,7 +25,7 @@
         </div>
 
         <div style="width:100%; margin:0 auto;">
-            <table id="example" class="table table-striped table-bordered dt-responsive" width="100%" cellspacing="0">
+            <table id="allergenHistoryDataTable" class="table table-striped table-bordered dt-responsive" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -49,7 +49,7 @@
     </div>
 
     <button class="collapsible">Allergy Input</button>
-    <div class="content overflow-hidden col-12">
+    <div id="inputSection" class="content overflow-hidden col-12">
         <div class="row allergy-input">
             <div class="col-md-3 col-sm-12">
                 <div class="form-group">
@@ -74,13 +74,13 @@
         </div>
 
         <div class="row ">
-            <div class="col-md-3 col-sm-12">
+            <div id="allergenOption" class="col-md-3 col-sm-12">
                 <div class="form-group">
                     <div><label for="allergenSelectBox">Allergen</label></div>
                     @Html.DropDownList("allergenSelectBox", Model.AllergenSelectList, new { @class = "selectpicker show-tick" })
                 </div>
             </div>
-            <div id="medicationOption" class="col-md-3 offset-md-1 col-sm-12">
+            <div id="medicationOption" class="col-md-3 col-sm-12">
                 <div class="form-group">
                     <div><label for="medicationSelectBox">Medication</label></div>
                     @Html.DropDownList("medicationSelectBox", Model.MedicationSelectList, new { @class = "selectpicker show-tick" })

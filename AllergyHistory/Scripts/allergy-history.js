@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 $(document).ready(function () {
-    var dataTable = $("#example").DataTable({
+    var dataTable = $("#allergenHistoryDataTable").DataTable({
         "processing": true, // for show progress bar
         "serverSide": true, // for process server side
         "filter": true, // this is for disable filter (search box)
@@ -38,12 +38,15 @@ $(document).ready(function () {
             {
                 data: null, render: function (data, type, row) {
 
-                    return "<a href='#' class='btn btn-inf' onclick=\"EditDataInput("
-                        //+ row.typeId + ',' +
-                        + row.AllergenId + ','
-                        + row.ReactionId + ','
-                        + row.SeverityId + ",'"
-                        + row.Notes + "')\">Edit</a>";
+                    var normalizedNotes = row.Notes.replace(/\"/g, '\\"');
+                    //return "<button href='#' class='btn btn-info edit-button' onclick=\"EditDataInput("
+                    //    + row.AllergenType + ','
+                    //    + row.AllergenId + ','
+                    //    + row.ReactionId + ','
+                    //    + row.SeverityId + ",\""
+                    //    + normalizedNotes + "\")\">Edit</button>";
+
+                    return "<button class='btn btn-info dt-btn-edit'>Edit</button>";
 
                 }
             },
@@ -105,23 +108,35 @@ $(document).ready(function () {
     $('.selectpicker').selectpicker();
 });
 
-function EditDataInput(allergenId, reactionId, severityId, notes) {
-    $('#allergenTypeSelectBox').val(-1);
+
+$('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
+    
+    var $row = $(this).closest('tr');
+    var data = $('#allergenHistoryDataTable').DataTable().row($row).data();
+
+    console.log(data);
+
+    $('#allergenTypeSelectBox').val(data.AllergenType);
+    $('#allergenTypeSelectBox').trigger('change');
     $('#allergenTypeSelectBox').selectpicker('refresh');
 
-    $('#allergenSeveritySelectBox').val(severityId);
+    $('#allergenSeveritySelectBox').val(data.SeverityId);
     $('#allergenSeveritySelectBox').selectpicker('refresh');
 
-    $('#allergenReactionSelectBox').val(reactionId);
+    $('#allergenReactionSelectBox').val(data.ReactionId);
     $('#allergenReactionSelectBox').selectpicker('refresh');
 
-    $('#allergenSelectBox').val(allergenId);
+    $('#allergenSelectBox').val(data.AllergenId);
     $('#allergenSelectBox').selectpicker('refresh');
 
     $('#medicationSelectBox').val(-1);
     $('#medicationSelectBox').selectpicker('refresh');
 
-    $('#noteText').val(notes);
-}
+    $('#noteText').val(data.Notes);
+    $('#inputSection').addClass("show");
 
+    var elmnt = document.getElementById("inputSection");
+    elmnt.scrollIntoView(false); 
+
+});
 

@@ -2,29 +2,17 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 $('#allergenTypeSelectBox').change(function (e) {
-    console.log($('#allergenTypeSelectBox').val());
+
+
+    $('#medicationOption').hide();
+    $('#allergenOption').hide();
     var typeId = $('#allergenTypeSelectBox').val();
-
     //Allergen
-    if (typeId == "611") {
+    if (typeId == "611")
         $('#allergenOption').show();
-        $('#medicationOption').hide();
-    }
-    else {
-        $('#allergenOption').hide();
-        $('#medicationOption').show();
-    }
-
     //Medication
-    if (typeId == "612") {
+    if (typeId == "612")
         $('#medicationOption').show();
-        $('#allergenOption').hide();
-    }
-    else {
-        $('#allergenOption').show();
-        $('#medicationOption').hide();
-    }
-
 });
 
 $("#submitButton").click(function (e) {
@@ -47,7 +35,7 @@ $("#submitButton").click(function (e) {
         data: dataObj,
 
         success: function (result) {
-           
+
         }
     });
 });

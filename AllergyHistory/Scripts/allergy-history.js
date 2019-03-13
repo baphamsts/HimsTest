@@ -129,14 +129,17 @@ $('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
     $('#allergenSelectBox').val(data.AllergenId);
     $('#allergenSelectBox').selectpicker('refresh');
 
-    $('#medicationSelectBox').val(-1);
+    $('#medicationSelectBox').val(data.AllergenId);
     $('#medicationSelectBox').selectpicker('refresh');
 
     $('#noteText').val(data.Notes);
     $('#inputSection').addClass("show");
 
-    var elmnt = document.getElementById("inputSection");
-    elmnt.scrollIntoView(false); 
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#inputSection").offset().top
+    }, 1000);
 
+    //var elmnt = document.getElementById("allergenTypeSelectBox");
+    //elmnt.scrollIntoView(false); 
 });
 

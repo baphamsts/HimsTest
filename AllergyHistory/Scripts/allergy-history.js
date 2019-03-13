@@ -37,13 +37,14 @@ $(document).ready(function () {
             { "data": "UpdateInfo", "name": "UpdateInfo", "autoWidth": true },
             {
                 data: null, render: function (data, type, row) {
-                    return "<a href='#' class='btn btn-inf' onclick=EditDataInput("
+
+                    return "<a href='#' class='btn btn-inf' onclick=\"EditDataInput("
                         //+ row.typeId + ',' +
-                        + row.allergenId + ',' +
-                        + row.reactionId + ',' +
-                        + row.severityId +
-                        //+ row.drugId + ',' +
-                        "); >Edit</a>";
+                        + row.AllergenId + ','
+                        + row.ReactionId + ','
+                        + row.SeverityId + ",'"
+                        + row.Notes + "')\">Edit</a>";
+
                 }
             },
         ],
@@ -104,7 +105,7 @@ $(document).ready(function () {
     $('.selectpicker').selectpicker();
 });
 
-function EditDataInput(allergenId, reactionId, severityId) {
+function EditDataInput(allergenId, reactionId, severityId, notes) {
     $('#allergenTypeSelectBox').val(-1);
     $('#allergenTypeSelectBox').selectpicker('refresh');
 
@@ -120,7 +121,7 @@ function EditDataInput(allergenId, reactionId, severityId) {
     $('#medicationSelectBox').val(-1);
     $('#medicationSelectBox').selectpicker('refresh');
 
-    $('#noteText').val("");
+    $('#noteText').val(notes);
 }
 
 

@@ -36,7 +36,7 @@ namespace AllergyHistory.Controllers
             var allergenTypeSelectItems = new List<SelectListItem>();
             allergenTypeSelectItems.Add(new SelectListItem { Value = "-1", Text = "Please select an option" });
 
-            string apiUrl = "http://localhost:62038/api/allergen/types";
+            string apiUrl = $"{AppSettings.ApiEndPoint}/allergen/types";
 
             var allergenTypeList = await GetXmlDataListViaAPI<AllergenTypeList>(apiUrl);
 
@@ -57,7 +57,7 @@ namespace AllergyHistory.Controllers
             var allergenReactionSelectItems = new List<SelectListItem>();
             allergenReactionSelectItems.Add(new SelectListItem { Value = "-1", Text = "Please select an option" });
 
-            string apiUrl = "http://localhost:62038/api/allergen/reactions";
+            string apiUrl = $"{AppSettings.ApiEndPoint}/allergen/reactions";
 
             var allergenReactionList = await GetXmlDataListViaAPI<AllergenReactionList>(apiUrl);
 
@@ -78,7 +78,7 @@ namespace AllergyHistory.Controllers
             var allergenSeveritySelectItems = new List<SelectListItem>();
             allergenSeveritySelectItems.Add(new SelectListItem { Value = "-1", Text = "Please select an option" });
 
-            string apiUrl = "http://localhost:62038/api/allergen/severities";
+            string apiUrl = $"{AppSettings.ApiEndPoint}/allergen/severities";
 
             var allergenSeverityList = await GetXmlDataListViaAPI<AllergenSeverityList>(apiUrl);
 
@@ -100,7 +100,7 @@ namespace AllergyHistory.Controllers
             var allergenSelectItems = new List<SelectListItem>();
             allergenSelectItems.Add(new SelectListItem { Value = "-1", Text = "Please select an option" });
 
-            string apiUrl = "http://localhost:62038/api/allergen/allergens";
+            string apiUrl = $"{AppSettings.ApiEndPoint}/allergen/allergens";
 
             var allergenList = await GetXmlDataListViaAPI<AllergenList>(apiUrl);
 
@@ -121,7 +121,7 @@ namespace AllergyHistory.Controllers
             var medicationSelectItems = new List<SelectListItem>();
             medicationSelectItems.Add(new SelectListItem { Value = "-1", Text = "Please select an option" });
 
-            string apiUrl = "http://localhost:62038/api/allergen/medications";
+            string apiUrl = $"{AppSettings.ApiEndPoint}/allergen/medications";
 
             var medicationList = await GetXmlDataListViaAPI<MedicationList>(apiUrl);
 
@@ -170,7 +170,7 @@ namespace AllergyHistory.Controllers
                 var draw = HttpContext.Request.Form["draw"];
                 var start = Request.Form["start"];
                 var pageLength = Request.Form["length"];
-               var searchPatientValue = Request.Form["search[value]"];
+                var searchPatientValue = Request.Form["search[value]"];
                 var stateSearch = Request.Form["statesearch"];
                 var timeSearch = Request.Form["timesearch"];
 
@@ -181,10 +181,10 @@ namespace AllergyHistory.Controllers
                 
                 int recordsTotal = 0;
 
-                var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/allergen-histories");
+                var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>($"{AppSettings.ApiEndPoint}/allergen-histories");
 
                 var allergyHistoryData = allergyHistoryList.AllergenHistories
-                    .Where(o => o.Deleted = deleted)
+                    .Where(o => o.Deleted == deleted)
                     .Select(x => new AllergenHistoryDataTableViewModel
                     {
                         Id = x.ClientId,

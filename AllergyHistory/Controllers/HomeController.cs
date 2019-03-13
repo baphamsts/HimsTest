@@ -47,16 +47,19 @@ namespace AllergyHistory.Controllers
                 var timeSearch = Request.Form["timesearch"];
 
                 //Paging Size(10,20,50,100, all = -1)  
-                bool deleted = stateSearch == "0" ? true : false;
+                
                 int pageSize = pageLength != string.Empty ? Convert.ToInt32(pageLength) : 0;
                 int skip = start != string.Empty ? Convert.ToInt32(start) : 0;
-                
+
+                bool deleted = stateSearch == "0" ? true : false;
+                DateTime startTimeFilter = GetStartTimeFilter(timeSearch);
+
                 int recordsTotal = 0;
 
                 var allergyHistoryList = await revokeApiService.GetXmlDataListViaAPI<AllergenHistoryList>($"{AppSettings.ApiEndPoint}/allergen-histories");
 
                 var allergyHistoryData = allergyHistoryList.AllergenHistories
-                    .Where(o => o.Deleted == deleted)
+                    .Where(o => o.Deleted == deleted && o.UpdateDateWithTime >= startTimeFilter)
                     .Select(x => new AllergenHistoryDataTableViewModel
                     {
                         Id = x.ClientId,
@@ -107,6 +110,32 @@ namespace AllergyHistory.Controllers
             {
                 throw ex;
             }
+        }
+
+        private DateTime GetStartTimeFilter(string timeFilterOption)
+        {
+            DateTime startTime = DateTime.Now;
+
+            switch (timeFilterOption)
+            {
+
+                case "all":
+                    startTime = DateTime.MinValue;
+                    break;
+                case "lastyear":
+                    startTime = DateTime.Today.AddYears(-1);
+                    break;
+                case "lastsixmonth":
+                    startTime = DateTime.Today.AddMonths(-6);
+                    break;
+                case "lastday":
+                    startTime = DateTime.Today.AddDays(-1);
+                    break;
+                    
+            }
+
+            return startTime;
+
         }
     }
 }

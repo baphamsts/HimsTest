@@ -6,6 +6,6 @@ namespace AllergyHistory.Services
 {
     public interface IAllergyHistoryDataService
     {
-        string GetAllAllergenHistoryXml();
+        string GetAllAllergenHistoryXml(string fakeDataFolderPath);
     }
 }

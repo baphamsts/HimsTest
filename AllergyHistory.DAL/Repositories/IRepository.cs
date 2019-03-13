@@ -20,6 +20,6 @@ namespace AllergyHistory.DAL.Repositories
         /// https://docs.microsoft.com/en-us/sql/relational-databases/xml/for-xml-sql-server?view=sql-server-2017
         /// </summary>
         /// <returns>XML string with multiple row fragments</returns>
-        string GetAllXml();
+        string GetAllXml(string fakeDataFolderPath);
     }
 }

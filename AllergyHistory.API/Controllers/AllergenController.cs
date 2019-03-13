@@ -12,6 +12,7 @@ namespace AlleryHistory.API.Controllers
         public AllergenController(IAllergenInputService allergenInputService)
         {
             this.allergenInputService = allergenInputService;
+            this.allergenInputService.FakeDataFolderPath = AppSettings.FakeDataFolderPath;
         }
 
         [Route("api/allergen/reactions")]

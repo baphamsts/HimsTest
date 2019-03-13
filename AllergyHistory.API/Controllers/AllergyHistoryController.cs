@@ -18,7 +18,8 @@ namespace AlleryHistory.API.Controllers
         [HttpGet]
         public HttpResponseMessage Get()
         {
-            var data = allergyHistoryDataService.GetAllAllergenHistoryXml();
+            var fakeDataFolderPath = AppSettings.FakeDataFolderPath;
+            var data = allergyHistoryDataService.GetAllAllergenHistoryXml(fakeDataFolderPath);
 
             var resp = new HttpResponseMessage(HttpStatusCode.OK);
             if (data != null)

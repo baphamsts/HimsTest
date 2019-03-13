@@ -20,6 +20,7 @@ namespace AllergyHistory.Services
         private readonly IRepository<Allergen> allergenRepository;
         private readonly IRepository<Drug> drugRepository;
         private readonly IAllergenInputConverter conveter;
+        public string FakeDataFolderPath { get; set; }
 
         public AllergenInputService(
             IRepository<AllergenSeverity> allergenSeverityRepository,
@@ -40,25 +41,25 @@ namespace AllergyHistory.Services
 
         public string GetAllAllergenSeverityXml()
         {
-            return allergenSeverityRepository.GetAllXml();
+            return allergenSeverityRepository.GetAllXml(FakeDataFolderPath);
         }
 
         public string GetAllAllergenTypeXml()
         {
-            return allergenTypeRepository.GetAllXml();
+            return allergenTypeRepository.GetAllXml(FakeDataFolderPath);
             
         }
         public string GetAllAllergenXml()
         {
-            return allergenRepository.GetAllXml();
+            return allergenRepository.GetAllXml(FakeDataFolderPath);
         }
         public string GetAllAllergenReactionXml()
         {
-            return allergenReactionRepository.GetAllXml();
+            return allergenReactionRepository.GetAllXml(FakeDataFolderPath);
         }
         public string GetAllMedicationXml()
         {
-            return drugRepository.GetAllXml();
+            return drugRepository.GetAllXml(FakeDataFolderPath);
         }
     }
 }

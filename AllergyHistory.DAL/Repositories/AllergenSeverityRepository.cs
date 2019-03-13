@@ -13,9 +13,9 @@ namespace AllergyHistory.DAL.Repositories
 
         }
 
-        public string GetAllXml()
+        public string GetAllXml(string fakeDataFolderPath)
         {
-            var xmlContent = File.ReadAllText(@"D:/HiMs/HimsTest/AllergyHistory.API/Data/Input/AllergenSeverityDropdown.xml");
+            var xmlContent = File.ReadAllText($"{fakeDataFolderPath}/Data/Input/AllergenSeverityDropdown.xml");
             return xmlContent;
         }
     }

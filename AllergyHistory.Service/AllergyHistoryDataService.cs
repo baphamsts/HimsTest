@@ -19,9 +19,9 @@ namespace AllergyHistory.Services
             this.conveter = conveter;
         }
 
-        public string GetAllAllergenHistoryXml()
+        public string GetAllAllergenHistoryXml(string fakeDataFolderPath)
         {
-            return allergenHistoryRepository.GetAllXml();
+            return allergenHistoryRepository.GetAllXml(fakeDataFolderPath);
         }
     }
 }

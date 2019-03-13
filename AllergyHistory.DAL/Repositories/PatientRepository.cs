@@ -23,9 +23,9 @@ namespace AllergyHistory.DAL.Repositories
         {
 
         }
-        public string GetAllXml()
+        public string GetAllXml(string fakeDataFolderPath)
         {
-            var xmlContent = File.ReadAllText(@"Data/Input/MedicationDropdown.xml");
+            var xmlContent = File.ReadAllText($"{fakeDataFolderPath}/Data/Input/MedicationDropdown.xml");
             return xmlContent;
         }
     }

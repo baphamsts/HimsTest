@@ -12,10 +12,10 @@ namespace AllergyHistory.DAL.Repositories
         {
 
         }
-        public string GetAllXml()
+        public string GetAllXml(string fakeDataFolderPath)
         {
             //string path = Directory.GetCurrentDirectory();
-            var xmlContent = File.ReadAllText(@"D:/HiMs/HimsTest/AllergyHistory.API/Data/Input/AllergenTypeDropdown.xml");
+            var xmlContent = File.ReadAllText($"{fakeDataFolderPath}/Data/Input/AllergenTypeDropdown.xml");
             return xmlContent;
         }
     }

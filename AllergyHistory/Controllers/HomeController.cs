@@ -170,9 +170,12 @@ namespace AllergyHistory.Controllers
                 var draw = HttpContext.Request.Form["draw"];
                 var start = Request.Form["start"];
                 var pageLength = Request.Form["length"];
-                var searchPatientValue = Request.Form["search[value]"];
+               var searchPatientValue = Request.Form["search[value]"];
+                var stateSearch = Request.Form["statesearch"];
+                var timeSearch = Request.Form["timesearch"];
 
                 //Paging Size(10,20,50,100, all = -1)  
+                bool deleted = stateSearch == "0" ? true : false;
                 int pageSize = pageLength != string.Empty ? Convert.ToInt32(pageLength) : 0;
                 int skip = start != string.Empty ? Convert.ToInt32(start) : 0;
                 
@@ -180,22 +183,24 @@ namespace AllergyHistory.Controllers
 
                 var allergyHistoryList = await GetXmlDataListViaAPI<AllergenHistoryList>("http://localhost:62038/api/allergen-histories");
 
-                var allergyHistoryData = allergyHistoryList.AllergenHistories.Select(x => new AllergenHistoryDataTableViewModel
-                {
-                    Id = x.ClientId,
-                    AllergenId = x.AllergenId,
-                    AllergenType = x.AllergenType,
-                    ReactionId = x.ReactionId,
-                    SeverityId = x.SeverityId,
-                    Patient = x.ClientName,
-                    Type = x.Type,
-                    Allergen = x.Allergen,
-                    Reaction = x.ReactionDesc,
-                    Serverty = x.SeverityDesc,
-                    Notes = x.Notes,
-                    CreateInfo = $"{x.CreateDate} by {x.CreateUser}",
-                    UpdateInfo = $"{x.UpdateDate} by {x.UpdateUser}"
-                });
+                var allergyHistoryData = allergyHistoryList.AllergenHistories
+                    .Where(o => o.Deleted = deleted)
+                    .Select(x => new AllergenHistoryDataTableViewModel
+                    {
+                        Id = x.ClientId,
+                        AllergenId = x.AllergenId,
+                        AllergenType = x.AllergenType,
+                        ReactionId = x.ReactionId,
+                        SeverityId = x.SeverityId,
+                        Patient = x.ClientName,
+                        Type = x.Type,
+                        Allergen = x.Allergen,
+                        Reaction = x.ReactionDesc,
+                        Serverty = x.SeverityDesc,
+                        Notes = x.Notes,
+                        CreateInfo = $"{x.CreateDate} by {x.CreateUser}",
+                        UpdateInfo = $"{x.UpdateDate} by {x.UpdateUser}"
+                    });
 
                 if (!string.IsNullOrEmpty(searchPatientValue))
                 {

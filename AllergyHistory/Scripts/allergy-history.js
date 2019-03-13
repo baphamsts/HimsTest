@@ -6,6 +6,11 @@ $(document).ready(function () {
     var dataTable = $("#allergenHistoryDataTable").DataTable({
         "processing": true, // for show progress bar
         "serverSide": true, // for process server side
+        "fnServerParams": function (aoData) {
+            aoData.statesearch = $('#stateFilterSelectBox').val();
+            aoData.timesearch = $('#timeFilterSelectBox').val();
+        },
+
         "filter": true, // this is for disable filter (search box)
         "ordering": false,
         "language": {
@@ -36,19 +41,7 @@ $(document).ready(function () {
             { "data": "CreateInfo", "name": "CreateInfo", "autoWidth": true },
             { "data": "UpdateInfo", "name": "UpdateInfo", "autoWidth": true },
             {
-                data: null, render: function (data, type, row) {
-
-                    var normalizedNotes = row.Notes.replace(/\"/g, '\\"');
-                    //return "<button href='#' class='btn btn-info edit-button' onclick=\"EditDataInput("
-                    //    + row.AllergenType + ','
-                    //    + row.AllergenId + ','
-                    //    + row.ReactionId + ','
-                    //    + row.SeverityId + ",\""
-                    //    + normalizedNotes + "\")\">Edit</button>";
-
-                    return "<button class='btn btn-info dt-btn-edit'>Edit</button>";
-
-                }
+               data: null, render: function () { return "<button class='btn btn-info dt-btn-edit'>Edit</button>"; }
             },
         ],
         dom: '<"allergy-searchbox col-md-6 col-sm-12"f><"allergy-table-button"B>rt<"allergy-table-len"l>ip',
@@ -108,6 +101,10 @@ $(document).ready(function () {
     $('.selectpicker').selectpicker();
 });
 
+$('#stateFilterSelectBox, #timeFilterSelectBox').change(function (e) {
+    $("#allergenHistoryDataTable").DataTable().draw();
+});
+
 
 $('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
     
@@ -137,9 +134,7 @@ $('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
 
     $([document.documentElement, document.body]).animate({
         scrollTop: $("#inputSection").offset().top
-    }, 1000);
+    }, 500);
 
-    //var elmnt = document.getElementById("allergenTypeSelectBox");
-    //elmnt.scrollIntoView(false); 
 });
 

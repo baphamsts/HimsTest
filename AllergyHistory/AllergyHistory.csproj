@@ -313,6 +313,7 @@
     <Content Include="fonts\fa-solid-900.woff2" />
     <Content Include="Libs\DataTables\Buttons-1.5.6\css\common.scss" />
     <Content Include="Libs\DataTables\Buttons-1.5.6\css\mixins.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

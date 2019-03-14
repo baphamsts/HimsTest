@@ -3,9 +3,9 @@
 
 // Write your JavaScript code.
 $(document).ready(function () {
-    var dataTable = $("#allergenHistoryDataTable").DataTable({
-        "processing": true, // for show progress bar
+    $("#allergenHistoryDataTable").DataTable({
         "responsive": true,
+        "processing": true, // for show progress bar
         "serverSide": true, // for process server side
         "fnServerParams": function (aoData) {
             aoData.statesearch = $('#stateFilterSelectBox').val();

@@ -1,11 +1,8 @@
 ﻿using AllergyHistory.Contract.ViewModels;
-using AllergyHistory.Helpers;
 using AllergyHistory.Models;
 using AllergyHistory.Services;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -135,7 +132,6 @@ namespace AllergyHistory.Controllers
             }
 
             return startTime;
-
         }
     }
 }

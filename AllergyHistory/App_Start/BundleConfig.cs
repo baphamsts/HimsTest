@@ -30,8 +30,7 @@ namespace AllergyHistory
                       "~/Scripts/fontawesome/all.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
-                    "~/Libs/DataTables/datatables.js",
-                    "~/Libs/DataTables/Responsive-2.2.2/js/dataTables.responsive.js"));
+                    "~/Libs/DataTables/datatables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/demoscripts").Include(
                      "~/Scripts/allergy-history.js",
@@ -45,8 +44,7 @@ namespace AllergyHistory
                       "~/Content/site.css",
                       "~/Content/allergy-input.css",
                       "~/Content/allergy-history.css",
-                      "~/Libs/DataTables/datatables.css",
-                      "~/Libs/DataTables/Responsive-2.2.2/css/responsive.bootstrap.css"));
+                      "~/Libs/DataTables/datatables.css"));
         }
     }
 }

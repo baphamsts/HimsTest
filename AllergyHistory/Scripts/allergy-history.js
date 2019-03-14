@@ -28,11 +28,7 @@ $(document).ready(function () {
         },
     
         "columns": [
-            { "data": "Id", "name": "Id", "autoWidth": true, "className": "hide_column" },
-            { "data": "AllergenId", "name": "AllergenId", "autoWidth": true, "className": "hide_column" },
-            { "data": "AllergenType", "name": "AllergenType", "autoWidth": true, "className": "hide_column" },
-            { "data": "ReactionId", "name": "ReactionId", "autoWidth": true, "className": "hide_column" },
-            { "data": "SeverityId", "name": "SeverityId", "autoWidth": true, "className": "hide_column" },
+           
             { "data": "Patient", "name": "Patient", "autoWidth": true },
             { "data": "Type", "name": "Type", "autoWidth": true },
             { "data": "Allergen", "name": "Allergen", "autoWidth": true },
@@ -41,9 +37,16 @@ $(document).ready(function () {
             { "data": "Notes", "name": "Notes", "autoWidth": true },
             { "data": "CreateInfo", "name": "CreateInfo", "autoWidth": true },
             { "data": "UpdateInfo", "name": "UpdateInfo", "autoWidth": true },
+
             {
                data: null, render: function () { return "<button class='btn btn-info dt-btn-edit'>Edit</button>"; }
             },
+
+            { "data": "Id", "name": "Id", "className": "hide_column" },
+            { "data": "AllergenId", "name": "AllergenId", "className": "hide_column" },
+            { "data": "AllergenType", "name": "AllergenType", "className": "hide_column" },
+            { "data": "ReactionId", "name": "ReactionId", "className": "hide_column" },
+            { "data": "SeverityId", "name": "SeverityId", "className": "hide_column" }
         ],
         dom: '<"allergy-searchbox col-md-6 col-sm-12"f><"allergy-table-button"B>rt<"allergy-table-len"l>ip',
         buttons: [
@@ -102,10 +105,15 @@ $(document).ready(function () {
     $('.selectpicker').selectpicker();
 });
 
+
+
 $('#stateFilterSelectBox, #timeFilterSelectBox').change(function (e) {
     $("#allergenHistoryDataTable").DataTable().draw();
 });
 
+$('#historySectionBtn').on('click', function () {
+     $("#allergenHistoryDataTable").DataTable().draw();
+});
 
 $('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
     
@@ -138,4 +146,3 @@ $('#allergenHistoryDataTable').on('click', 'button.dt-btn-edit', function () {
     }, 500);
 
 });
-
